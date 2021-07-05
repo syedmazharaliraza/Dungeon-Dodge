@@ -1,0 +1,436 @@
+:root {
+    --pixel--size: 0.7;
+}
+
+.pixelart {
+    image-rendering: pixelated;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    background-color: #1c1117;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Floor/Base */
+
+.floor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 430px;
+    background-image: url(/images/base.png);
+    background-repeat: repeat;
+}
+
+/* Main character */
+
+.char {
+    width: calc(126.5px * var(--pixel--size));
+    height: calc(197px * var(--pixel--size));
+    overflow: hidden;
+    z-index: 100;
+    transition: 0.3s ease-in-out;
+    display: none;
+}
+
+.char img {
+    width: calc(1265px * var(--pixel--size));
+    animation: movesprite 0.7s steps(10) infinite;
+}
+
+/* Coin */
+
+.coin {
+    position: absolute;
+    top: 166px;
+    left: 176px;
+    width: calc(82.83px * var(--pixel--size));
+    height: calc(88px * var(--pixel--size));
+    overflow: hidden;
+}
+
+.coin img {
+    width: calc(497px * var(--pixel--size));
+    animation: movesprite 0.7s steps(6) infinite;
+}
+
+/* Sprite Sheet Animation */
+
+@keyframes movesprite {
+    from {
+        transform: translate3d(0px, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Fireball */
+
+.fire {
+    position: absolute;
+    opacity: 0;
+    width: calc(153.33px * var(--pixel--size));
+    height: calc(154px * var(--pixel--size));
+    overflow: hidden;
+    z-index: 100;
+}
+
+.fire img {
+    width: calc(920px * var(--pixel--size));
+    animation: movesprite 0.7s steps(6) infinite;
+}
+
+.fire1 {
+    top: -10px;
+    left: -150px;
+}
+
+.fire2 {
+    transform: rotate(90deg);
+    top: -120px;
+    left: -10px;
+}
+
+.fire3 {
+    transform: rotate(180deg);
+    top: -10px;
+    left: 550px;
+}
+
+.fire4 {
+    transform: rotate(270deg);
+    top: 430px;
+    left: -10px;
+}
+
+.fireanimation1 {
+    animation: movefireball1 4s ease-out;
+}
+
+.fireanimation2 {
+    animation: movefireball2 4s ease-out;
+}
+
+.fireanimation3 {
+    animation: movefireball3 4s ease-out;
+}
+
+.fireanimation4 {
+    animation: movefireball4 4s ease-out;
+}
+
+@keyframes movefireball1 {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        left: -150px;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: 550px;
+    }
+}
+
+@keyframes movefireball2 {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        top: -120px;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 430px;
+    }
+}
+
+@keyframes movefireball3 {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        left: 550px;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: -150px;
+    }
+}
+
+@keyframes movefireball4 {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        top: 430px;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: -120px;
+    }
+}
+
+/* All four stairs */
+
+.stairs {
+    position: absolute;
+    width: 152px;
+    height: 167px;
+    top: 50%;
+    left: 50%;
+}
+
+.stairs1 {
+    transform: translate(160%, -50%);
+}
+
+.stairs2 {
+    transform: rotate(180deg) translate(260%, 150%);
+}
+
+.stairs3 {
+    transform: rotate(270deg) translate(470%, -50%);
+}
+
+.stairs4 {
+    transform: rotate(90deg) translate(-200%, 50%);
+}
+
+/* Score at the top */
+
+.score {
+    position: absolute;
+    font-family: 'Common Pixel', sans-serif;
+    color: white;
+    top: 5%;
+    left: 5%;
+}
+
+.instruction {
+    position: absolute;
+    display: none;
+    font-family: 'Common Pixel', sans-serif;
+    color: white;
+    top: 100%;
+    z-index: 100;
+    text-align: center;
+}
+
+#startover.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+}
+
+#startover.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s ease-in-out;
+}
+
+#over.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+}
+
+#over.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s ease-in-out;
+}
+
+#goc {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scale(0);
+    z-index: 100;
+}
+
+.text h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-family: 'Common Pixel', sans-serif;
+    font-size: 50px;
+}
+
+.text h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-family: 'Common Pixel', sans-serif;
+    font-size: 40px;
+}
+
+.text button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-family: 'Common Pixel', sans-serif;
+    font-size: 30px;
+    height: 60px;
+    width: 160px;
+    border-radius: 10px;
+}
+
+#start {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform: scale(0);
+    z-index: 100;
+}
+
+.starttext h1 {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-family: 'Common Pixel', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    animation: starttext 3s ease-in-out infinite;
+}
+@keyframes starttext {
+    0%{
+        left: 40%;
+    }
+    50%{
+        left: 60%;
+    }
+}
+.starttext button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-family: 'Common Pixel', sans-serif;
+    font-size: 30px;
+    height: 70px;
+    width: 160px;
+    border-radius: 10px;
+}
+
+#goc.active {
+    transform: scale(1);
+    transition: 0.5s ease-in-out;
+}
+
+#start.active {
+    transform: scale(1);
+    transition: 0.5s ease-in-out;
+}
