@@ -280,7 +280,8 @@ body {
 
 .score {
     position: absolute;
-    font-family: 'Common Pixel', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
     color: white;
     top: 5%;
     left: 5%;
@@ -289,7 +290,9 @@ body {
 .instruction {
     position: absolute;
     display: none;
-    font-family: 'Common Pixel', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5em;
+    font-size: 25px;
     color: white;
     top: 100%;
     z-index: 100;
@@ -358,8 +361,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(255, 255, 255);
-    font-family: 'Common Pixel', sans-serif;
-    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
 }
 
 .text h2 {
@@ -368,8 +371,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(255, 255, 255);
-    font-family: 'Common Pixel', sans-serif;
-    font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
 }
 
 .text button {
@@ -378,8 +381,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(0, 0, 0);
-    font-family: 'Common Pixel', sans-serif;
-    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
     height: 60px;
     width: 160px;
     border-radius: 10px;
@@ -399,7 +402,7 @@ body {
     left: 40%;
     transform: translate(-50%, -50%);
     color: rgb(255, 255, 255);
-    font-family: 'Common Pixel', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size: 60px;
     text-align: center;
     animation: starttext 3s ease-in-out infinite;
@@ -420,7 +423,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(0, 0, 0);
-    font-family: 'Common Pixel', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size: 30px;
     height: 70px;
     width: 160px;
