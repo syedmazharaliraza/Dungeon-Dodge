@@ -4,3 +4,4 @@ Dodge is getting hit in the dungeon and has to collect coins. Use the arrow keys
 <img src="images/ss1.PNG"><br>
 <img src="images/ss2.PNG"><br>
 <img src="images/ss3.PNG"><br>
+<img src="images/ss4.PNG"><br>
