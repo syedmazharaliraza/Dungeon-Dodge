@@ -11,14 +11,14 @@ let startoverlay = document.querySelector("#startover");
 let overlay = document.querySelector("#over");
 let instruction = document.querySelector(".instruction");
 
-var coinpick = new Audio('sounds/coinpick.mp3'); //CoinPick Sound effect
-var hit = new Audio('sounds/hit.mp3'); //fireball hits character Sound effect
-var gamestart = new Audio('sounds/gamestart.mp3'); //Game Start Sound effect
+let coinpick = new Audio('sounds/coinpick.mp3'); //CoinPick Sound effect
+let hit = new Audio('sounds/hit.mp3'); //fireball hits character Sound effect
+let gamestart = new Audio('sounds/gamestart.mp3'); //Game Start Sound effect
 
 let move = 83; //Movement by 83px
-var column = 0; //initial column position for character
-var row = 0; //initial row position for character
-var score = 0; //initial score
+let column = 0; //initial column position for character
+let row = 0; //initial row position for character
+let score = 0; //initial score
 
 // Character Initial Position being set when window is loaded
 window.addEventListener('load', function () {
@@ -46,18 +46,25 @@ var cointop = [0, 83, 166, 249, 332];
 var coinleft = [10, 93, 176, 260, 341, 425];
 
 // Random Coin Position each time page is loaded
-var cointoprandom = Math.floor(Math.random() * 5);
-var coinleftrandom = Math.floor(Math.random() * 6);
+
+function random4() {
+    return Math.floor(Math.random() * 5);
+}
+function random5() {
+    return Math.floor(Math.random() * 6);
+}
+let cointoprandom = random4();
+let coinleftrandom = random5();
 coin.style.top = cointop[cointoprandom] + 'px';
 coin.style.left = coinleft[coinleftrandom] + 'px';
 
 // Array of different positions for fireballs
-var firetop = [-10, 78, 160, 240, 326];
-var fireleft = [-10, 65, 150, 230, 315, 395];
-
+let firetop = [-10, 78, 160, 240, 326];
+let fireleft = [-10, 65, 150, 230, 315, 395];
 
 let timer = setInterval(() => {
-
+    
+    //After game is over
     function gameover() {
         setTimeout(() => {
             hit.play();
@@ -507,7 +514,7 @@ window.addEventListener('keydown', function (e) {
                 row--;
             }
             if (charleft == -15) {
-                character.style.left = -15 + 'px';
+                character.style.left = -15 + 'px'; //character can't move out of the floor
             }
             break;
         case 'ArrowRight':
@@ -516,7 +523,7 @@ window.addEventListener('keydown', function (e) {
                 row++;
             }
             if (charleft == 400) {
-                character.style.left = 400 + 'px';
+                character.style.left = 400 + 'px'; //character can't move out of the floor
             }
             break;
         case 'ArrowUp':
@@ -525,7 +532,7 @@ window.addEventListener('keydown', function (e) {
                 column--;
             }
             if (chartop == -50) {
-                character.style.top = -50 + 'px';
+                character.style.top = -50 + 'px'; //character can't move out of the floor
             }
             break;
         case 'ArrowDown':
@@ -534,7 +541,7 @@ window.addEventListener('keydown', function (e) {
                 column++;
             }
             if (chartop == 282) {
-                character.style.top = 282 + 'px';
+                character.style.top = 282 + 'px'; //character can't move out of the floor
             }
             break;
     }
@@ -548,10 +555,10 @@ window.addEventListener('keydown', function (e) {
             coinpick.play();
             score += 10;
             document.querySelector('.score').textContent = 'SCORE: ' + score;
-            cointoprandom = Math.floor(Math.random() * 5);
-            coinleftrandom = Math.floor(Math.random() * 6);
-            firetoprandom = Math.floor(Math.random() * 5);
-            fireleftrandom = Math.floor(Math.random() * 6);
+            cointoprandom = random4();
+            coinleftrandom = random5();
+            firetoprandom = random4();
+            fireleftrandom = random5();
             coin.style.top = cointop[cointoprandom] + 'px';
             coin.style.left = coinleft[coinleftrandom] + 'px';
 
